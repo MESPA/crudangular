@@ -1,0 +1,39 @@
+
+<div class="container nt-5">
+  <div class="row">
+    <div class="card-body text-center">
+      <span>Listar Productos</span>
+      <button class="btn btn-success float-end" routerLink="/crear-productos">Nuevo</button>
+      <table *ngIf="listarproductos.length > 0" class="table mt-4">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Productos</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Ubicacion</th>
+            <th scope="col">Precio</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- itera la variable para mostrar en la tabla -->
+          <tr *ngFor="let item of listarproductos">
+
+            <td>{{item.productos}}</td>
+            <td>{{item.categoria}}</td>
+            <td>{{item.ubicacion}}</td>
+            <td>{{item.precio}}</td>
+
+            <td>
+              <i [routerLink] = "['/editar-productos',item.id]" class="fas fa-edit text-primary" ></i>
+              <i (click)="eliminarProductos(item.id)" class="fas fa-trash text-danger"></i>
+
+            </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+      <h1 *ngIf="listarproductos.length==0" class="text-info">No hay productos para mostrar</h1>
+    </div>
+  </div>
+</div>

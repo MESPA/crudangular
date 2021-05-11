@@ -1,0 +1,7 @@
+npm init
+servidor de desarrollo 
+npm i -D nodemon
+frameword paquete de interaccion de base de datos
+npm i express mongoose dotenv
+ejecutar servidor dev que tiene el nodemon para cambios y recompila
+npm run dev
